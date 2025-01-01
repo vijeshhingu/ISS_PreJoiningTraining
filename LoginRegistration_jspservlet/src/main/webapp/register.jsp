@@ -1,12 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Registration Page</title>
+</head>
 <body>
-    <h1>Register</h1>
+    <h2>Register</h2>
+    
     <form action="register" method="post">
-        <label>Username: </label><input type="text" name="username"><br>
-        <label>Password: </label><input type="password" name="password"><br>
-        <button type="submit">Register</button>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" required><br><br>
+
+        <input type="submit" value="Register">
     </form>
-    <p style="color: red;">${param.error}</p>
+
+    <c:if test="${not empty errorMessage}">
+        <div style="color: red;">
+            <strong>${errorMessage}</strong>
+        </div>
+    </c:if>
 </body>
 </html>

@@ -1,10 +1,11 @@
-<%@ page session="true" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Welcome Page</title>
+</head>
 <body>
-    <h1>Welcome, ${sessionScope.username}</h1>
-    <form action="logout.jsp" method="post">
-        <button type="submit">Logout</button>
-    </form>
+    <h2>Welcome, ${sessionScope.username}!</h2>
+    <a href="logout">Logout</a>
 </body>
 </html>

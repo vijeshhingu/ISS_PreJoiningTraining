@@ -1,12 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Login Page</title>
+</head>
 <body>
-    <h1>Login</h1>
+    <h2>Login</h2>
+    
     <form action="login" method="post">
-        <label>Username: </label><input type="text" name="username"><br>
-        <label>Password: </label><input type="password" name="password"><br>
-        <button type="submit">Login</button>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
     </form>
-    <p style="color: red;">${param.error}</p>
+
+    <c:if test="${not empty errorMessage}">
+        <div style="color: red;">
+            <strong>${errorMessage}</strong>
+        </div>
+    </c:if>
 </body>
 </html>
