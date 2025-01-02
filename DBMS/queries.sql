@@ -65,9 +65,9 @@ LEFT JOIN Departments d ON e.department_id = d.id;
 SELECT e.name, d.department_name FROM Employees e 
 RIGHT JOIN Departments d ON e.department_id = d.id;
 
--- Full Join (if supported)
--- SELECT e.name, d.department_name FROM Employees e 
--- FULL OUTER JOIN Departments d ON e.department_id = d.id;
+-- Full Join
+SELECT e.name, d.department_name FROM Employees e 
+FULL OUTER JOIN Departments d ON e.department_id = d.id;
 
 -- 13. Union
 SELECT name FROM Employees UNION SELECT department_name FROM Departments;
